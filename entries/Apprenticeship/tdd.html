@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+    <title>Hola mundo</title>
+</head>
+
+<body class="uk-margin uk-margin-left uk-margin-right">
+    <a href="../../index.html" class="uk-button uk-button-text uk-margin-bottom">Volver</a>
+    <div class="uk-cover-container uk-height-medium">
+        <img src="../../images/grafitti.gif" alt="Carl Sagan" uk-cover />
+    </div>
+    <h1 class="uk-heading-divider">Hola mundo</h1>
+    <blockquote cite="#">
+        <p class="uk-margin-small-bottom">Any fool can write code that computer can understand, but it takes a good
+            programmer to write code that human can understand.</p>
+        <footer>Martin Fowler <cite><a href="https://en.wikiquote.org/wiki/Martin_Fowler">wikiquote</a></cite></footer>
+    </blockquote>
+    <h2 class="uk-heading-line">Introducción</h2>
+    <p class="uk-text-justify">
+        Hola mundo, en la jerga de IT, suele ser el primer programa que escribimos en un nuevo lenguaje o una tecnología
+        que estamos arrancando. No es solo una tradición que nos une con otros programadores y programadoras del mundo
+        entero, sino también una buena forma de comprobar que el entorno que estamos construyendo está funcionando hasta
+        el momento. En el momento en que tipeo esta entrada, me siento escribiendo mi primer "Hello, world!". Si tenés
+        ganas, te cuento porque.
+    </p>
+    <h2 class="uk-heading-line">La comunicación</h2>
+    <p class="uk-text-justify">
+        Retomando la constumbre del <code>Hello, world</code> pienso un poco en el valor de esa frase más allá de la
+        superficie. Muchas veces creemos que es algo superficial o en el mejor de los casos, algo meramente técnico.
+        Esa primera instrucción, nos está revelando algo mucho más profundo que en un principio no podemos ver y es que
+        la programación es una forma más de comunicarnos entre nosotros. Y no me refiero a comunicación con una
+        computadora, sino con otro ser humano. A veces perdemos esto de vista pero la inmensa mayoría de código que
+        escribamos, más temprano que tarde un ser humano va a volver a leer nuestro código. Esa relectura puede ser para
+        corregir un error, para agregar una funcionalidad o para inspirarse. Cualquiera sea el caso, vas a necesitar,
+        con toda seguridad que tu código sea legible y fácil de mantener. Incluso, muchas veces, ese ser humano vas a
+        ser vos mismo tratando de entender a tu yo del pasado. En definitiva la idea central que te quiero transmitir es
+        que lo importante no es solo que funcione, sino que no tengas miedo de modificarlo más adelante, de ser
+        necesario.
+    </p>
+    <h2 class="uk-heading-line">Clean Code</h2>
+    <p class="uk-text-justify">
+        Clean Code, inspirado en la idea de Uncle Bob y muchos otros, es un poco tener presente esta idea de la
+        comunicación a través del código. Es tener presente que hay <mark>alguien</mark> del otro lado que va a estar
+        leyendo nuestro código. Esto implica dejar de tomar como algo trivial los nombres de las variables, funciones y
+        clases por ejemplo. Para ambos casos es importante tener presente que sus nombres deben manifestar la intención
+        que tenemos acerca de qué es y cómo se usa. Sin abreviaturas ni tipos de datos, simplemente información
+        descriptiva del valor que aporta ese elemento al código. Para variables y funciones globales, existe una regla
+        que indica que la longitud de su nombre debe ser inversamente proporcional al alcance que tiene. Una variable
+        con un scope global de toda la aplicación debería tener un nombre concreto y simple como <mark>app</mark>.
+        Mientras que para las clases funciona exactamente al revés. Una clase usada muy lejos de su implementación y sus
+        métodos, deberían tener nombres bien completos y descriptivos sobre las intenciones de su uso.
+    </p>
+    <p class="uk-text-justify">
+        Cuestiones más elementales como, no usar comentarios, respetar las convenciones para las nomenclaturas, que los
+        nombres de las clases y funciones representen bien su responsabilidad y usos, que los métodos hagan una sola
+        cosa y la hagan bien, no usar abreviaturas innecesarias como <mark>ctx</mark> en lugar de <mark>context</mark>,
+        etc., son la principal fuente de limpieza de nuestro código. 
+    </p>
+    <h2 class="uk-heading-line">Conclusiones</h2>
+    <p class="uk-text-justify">
+        Este artículo se trata de no perder el enfoque sobre cuál es el ciclo de vida de nuestras aplicaciones. Muchas
+        veces hacemos una prueba de concepto rápida en la que pensamos, <quote>No tengo ningún interés en escribir esto
+            limpio, sino en que funcione</quote> pero unos meses después se nos ocurre que lo podemos incorporar a un
+        proyecto y no logramos entendernos ni a nosotros mismos. En otra escala de situaciones, tengamos en cuenta una
+        lista de cosas que debemos recordar. Si alguna de estas situaciones sucede, no estamos escribiendo <mark>Clean
+            Code</mark> y por lo tanto, deberíamos limpiarlo:
+    <ul class="uk-list uk-list-square uk-list-primary">
+        <li>Si necesitás entrar a ver la explotación de algún método, el nombre de la función o de los parámetros no es
+            lo suficientemente claro.</li>
+        <li>Si sentís la necesidad de dejar algunas funciones explicadas con un comentario, deberías limpiar tu código.
+        </li>
+        <li>Si hay partes del código que solo una persona del equipo puede mantener, porque es el único que lo entiende,
+            ese código huele a podrido.</li>
+        <li>Si estás leyendo un código viejo tuyo, con el seño fruncido y la mano en la frente, deberías limpiar tu
+            código.</li>
+    </ul>
+    <p class="uk-text-justify"></p>
+    </p>
+    <a href="" uk-totop uk-scroll></a>
+</body>
+
+</html>
