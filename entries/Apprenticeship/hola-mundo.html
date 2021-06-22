@@ -19,6 +19,11 @@
         <img src="../../images/grafitti.gif" alt="Carl Sagan" uk-cover />
     </div>
     <h1 class="uk-heading-divider">Hola mundo</h1>
+    <blockquote cite="#">
+        <p class="uk-margin-small-bottom">Any fool can write code that computer can understand, but it takes a good
+            programmer to write code that human can understand.</p>
+        <footer>Martin Fowler <cite><a href="https://en.wikiquote.org/wiki/Martin_Fowler">wikiquote</a></cite></footer>
+    </blockquote>
     <h2 class="uk-heading-line">Introducción</h2>
     <p class="uk-text-justify">
         Hola mundo, en la jerga de IT, suele ser el primer programa que escribimos en un nuevo lenguaje o una tecnología
@@ -27,62 +32,59 @@
         el momento. En el momento en que tipeo esta entrada, me siento escribiendo mi primer "Hello, world!". Si tenés
         ganas, te cuento porque.
     </p>
-    <h2 class="uk-heading-line">IDE vs Editor de Código</h2>
+    <h2 class="uk-heading-line">La comunicación</h2>
     <p class="uk-text-justify">
-        Sí lo se, se que estás pensando. Cuando empezás con tus primeras líneas de código no tenés idea que es un IDE ni
-        qué es un editor de texto y claro, tenés razón. Pero en esta instancia, con algunos pasos ya dados, puedo decir
-        que tengo cierta noción al respecto aunque recientemente aprendí algunas cosas y te las cuento.
+        Retomando la constumbre del <code>Hello, world</code> pienso un poco en el valor de esa frase más allá de la
+        superficie. Muchas veces creemos que es algo superficial o en el mejor de los casos, algo meramente técnico.
+        Esa primera instrucción, nos está revelando algo mucho más profundo que en un principio no podemos ver y es que
+        la programación es una forma más de comunicarnos entre nosotros. Y no me refiero a comunicación con una
+        computadora, sino con otro ser humano. A veces perdemos esto de vista pero la inmensa mayoría de código que
+        escribamos, más temprano que tarde un ser humano va a volver a leer nuestro código. Esa relectura puede ser para
+        corregir un error, para agregar una funcionalidad o para inspirarse. Cualquiera sea el caso, vas a necesitar,
+        con toda seguridad que tu código sea legible y fácil de mantener. Incluso, muchas veces, ese ser humano vas a
+        ser vos mismo tratando de entender a tu yo del pasado. En definitiva la idea central que te quiero transmitir es
+        que lo importante no es solo que funcione, sino que no tengas miedo de modificarlo más adelante, de ser
+        necesario.
     </p>
-    <h3>Ventajas de usar un IDE</h3>
+    <h2 class="uk-heading-line">Clean Code</h2>
     <p class="uk-text-justify">
-        Hay un tema principal que es de <mark>productividad</mark>. Esto se refiere a que, los atajos de teclado, la
-        cantidad de
-        funcionalidades y facilidades que tiene un IDE no se compara con <i>ningún</i> editor de texto. Esto acelera
-        bastante el trabajo, una vez que te aprenditste estos <i>trucos</i> y los ponés a trabajar. En algún sentido, si
-        bien le puse otros <i>nombres</i>, todos los temas que siguen contribuyen a la productividad.
-    </p>
-    <p class="uk-text-justify">
-        También podemos hablar de la <mark>reducción de riesgos</mark> de cometer errores. Esto, si bien no es perfecto
-        es absolutamente fundamental. Un IDE tiene la capacidad de comprender e iterpretar la sitaxis a un nivel mucho
-        más eficiente que el ojo humano y esto, muchas veces, te ayuda a detectar el error casi en el momento exacto en
-        que lo estás cometiendo.
-    </p>
-    <p class="uk-text-justify">
-        Finalmente, me gustaría decir unas palabras sobre la flexibilidad del <mark>entorno</mark>. Muchas veces nos
-        encontramos varios minutos, a veces incluso horas, configurando el enotrno de desarrollo de nuestra aplicación.
-        Peleando con los <code>package.json</code>, con un <code>pip install</code> medio rebelde o una librería que no
-        encuentra por <code>gradle</code>. Para todos estos inconvenientes, un IDE tiene facilidades de alto nivel que
-        te ayudan a acelerar este proceso y además, una vez que quedó bien configurado es muy fácil transportarlo a otro
-        desarrollo.
-    </p>
-    <h3>Desventajas de usar un IDE</h3>
-    <p class="uk-text-justify">
-        Por supuesto que todas estas ventajas tienen una cara oculta y es el <mark>rendimiento</mark>. Los IDE suelen
-        ser programas más pesados y lentos, justamente porque tienen más funcionalidades complejas. Esto hace que tarden
-        más en abrirse y en ejecutar las tareas simples. Por supuesto que no es una diferencia de tiempo invalidante
-        pero se siente y a veces vale la pena tenerlo en cuenta. Sobre todo para proyectos simples, de poca extensión y
-        complejidad, a veces no es necesario toda la infraestructura de un IDE, por ejemplo, para escribir este Blog.
+        Clean Code, inspirado en la idea de Uncle Bob y muchos otros, es un poco tener presente esta idea de la
+        comunicación a través del código. Es tener presente que hay <mark>alguien</mark> del otro lado que va a estar
+        leyendo nuestro código. Esto implica dejar de tomar como algo trivial los nombres de las variables, funciones y
+        clases por ejemplo. Para ambos casos es importante tener presente que sus nombres deben manifestar la intención
+        que tenemos acerca de qué es y cómo se usa. Sin abreviaturas ni tipos de datos, simplemente información
+        descriptiva del valor que aporta ese elemento al código. Para variables y funciones globales, existe una regla
+        que indica que la longitud de su nombre debe ser inversamente proporcional al alcance que tiene. Una variable
+        con un scope global de toda la aplicación debería tener un nombre concreto y simple como <mark>app</mark>.
+        Mientras que para las clases funciona exactamente al revés. Una clase usada muy lejos de su implementación y sus
+        métodos, deberían tener nombres bien completos y descriptivos sobre las intenciones de su uso.
     </p>
     <p class="uk-text-justify">
-        Por último, me gustaría hablar de la <mark>curva de aprendizaje</mark>. Re pensando en el concepto de mayor
-        funcionalidad, esto hace que el programa en sí, sea más complejo de usar. En concreto, tiene más botones, más
-        cosas que configurar y más cosas que recordar. Cuando estás aprendiendo una nueva tecnología, es bueno enfocarte
-        en eso y no en aprender el lenguaje y a la vez el IDE. Por supuesto que no es algo dramático, pero a veces puede
-        hacer la diferencia cuando estás dando tus primeros pasos.
-    </p>
-    <h2 class="uk-heading-line">Un editor de texto</h2>
-    <p class="uk-text-justify">
-        Un editor de texto entonces, <i>suele</i> ser más libiano y ágil que un IDE, tiene una menor curva de
-        aprendizaje y esto lo hace más fácil de usar. Incluso es probable, que cuando estés empezando te llegues a
-        encariñar con uno. Pero cuando empieces a hacer cosas más complejas y avanzadas vas a encontrarte con las
-        fronteras de la capacidad de estos programas. Y si tenemos en cuenta a los plugins y
-        extensiones para que los editores de texto imiten los IDE, dejaría de ser un editor de texto entonces.
+        Cuestiones más elementales como, no usar comentarios, respetar las convenciones para las nomenclaturas, que los
+        nombres de las clases y funciones representen bien su responsabilidad y usos, que los métodos hagan una sola
+        cosa y la hagan bien, no usar abreviaturas innecesarias como <mark>ctx</mark> en lugar de <mark>context</mark>,
+        etc., son la principal fuente de limpieza de nuestro código. 
     </p>
     <h2 class="uk-heading-line">Conclusiones</h2>
     <p class="uk-text-justify">
-
+        Este artículo se trata de no perder el enfoque sobre cuál es el ciclo de vida de nuestras aplicaciones. Muchas
+        veces hacemos una prueba de concepto rápida en la que pensamos, <quote>No tengo ningún interés en escribir esto
+            limpio, sino en que funcione</quote> pero unos meses después se nos ocurre que lo podemos incorporar a un
+        proyecto y no logramos entendernos ni a nosotros mismos. En otra escala de situaciones, tengamos en cuenta una
+        lista de cosas que debemos recordar. Si alguna de estas situaciones sucede, no estamos escribiendo <mark>Clean
+            Code</mark> y por lo tanto, deberíamos limpiarlo:
+    <ul class="uk-list uk-list-square uk-list-primary">
+        <li>Si necesitás entrar a ver la explotación de algún método, el nombre de la función o de los parámetros no es
+            lo suficientemente claro.</li>
+        <li>Si sentís la necesidad de dejar algunas funciones explicadas con un comentario, deberías limpiar tu código.
+        </li>
+        <li>Si hay partes del código que solo una persona del equipo puede mantener, porque es el único que lo entiende,
+            ese código huele a podrido.</li>
+        <li>Si estás leyendo un código viejo tuyo, con el seño fruncido y la mano en la frente, deberías limpiar tu
+            código.</li>
+    </ul>
+    <p class="uk-text-justify"></p>
     </p>
-
     <a href="" uk-totop uk-scroll></a>
 </body>
 
