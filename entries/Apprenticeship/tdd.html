@@ -16,12 +16,57 @@
 <body class="uk-margin uk-margin-left uk-margin-right">
     <a href="../../index.html" class="uk-button uk-button-text uk-margin-bottom">Volver</a>
     <div class="uk-cover-container uk-height-medium">
-        <img src="../../images/grafitti.gif" alt="Carl Sagan" uk-cover />
+        <img src="../../images/tdd.png" alt="Red - Green - Refactor" uk-cover />
     </div>
     <h1 class="uk-heading-divider">Test Driven Development</h1>
-    <h2 class="uk-heading-line">En construcción</h2>
+    <h2 class="uk-heading-line">Introducción</h2>
+    <p class="uk-text-justify">
+        <mark>TTD</mark> es una técnica de diseño de software que propone empezar por los test, y
+        que el diseño vaya surgiendo de ellos. Pregonada por <i>Kent Beck, Robert Martin, Sandro Mancuso, etc.</i>
+        aunque con distintas escuelas entre ellos pero todos coinciden en los principales lineamientos.
     </p>
-    <a href="" uk-totop uk-scroll></a>
+    <p class="uk-text-justify">
+        Entre sus ventajas se encuentra una mejor cobertura de los test automatizados, un mejor
+        diseño del software y menor presencia de bugs, entre otras. A continuación expondré algunas
+        características de la escuela de Kent Beck y Uncle Bob.
+    </p>
+    <h2 class="uk-heading-line">Red, Green, Refactor</h2>
+    <p class="uk-text-justify">
+        Pero entonces, ¿de qué se trata la técnica? Se trata de tres sencillos pasos que debemos repetir en un orden
+        específico. El primer paso que vamos a realizar es <mark>escribir un test que falle (RED).</mark> Esto nos
+        obliga a crear una
+        necesidad y debería limitarnos nuestro desarrollo, es decir que deberíamos abstenernos de desarrollar de más. Es
+        importante en este caso, que el test falle por la razón correcta. Es decir, que si estamos testeando una suma,
+        por ejemplo, el test nos devuelva el resultado incorrecto de la suma.
+        Una vez creada la necesidad pasamos al segundo paso, que se trata de <mark>hacer pasar ese test de la forma más
+            sencilla posible (GREEN)</mark>, sin preocuparnos por el diseño, ni la performance ni nadad de eso. En este
+        instante, habiendo visto al test fallar por la razón correcta y ahora verlo pasar en verde, tenemos confianza de
+        que nuestro test nos está protegiendo bien de esa funcionalidad, por eso fundamentalmente, es que lo hacemos
+        fallar. Finalmente, luego de estos dos pasos, llegamos al momento de <mark>limpiar nuestro código
+            (REFACTOR).</mark>
+        Comenzando por el código productivo y en un segundo momento por nuestros test, este es el momento de pensar bien
+        nombres de variables, clases y funciones, crear objetos nuevos, eliminar duplicaciones de código, etc. Lo
+        interesante de este paso, es que a cada pequeño cambio, podemos ejecutar los test e ir avanzando con el
+        refactor, con la tranquilidad de que todo sigue funcionando igual. En caso de que algo falle, sabemos
+        exactamente dónde se encuentra el error y tardaremos, <i>nada</i> en volver para atrás y corregirlo.
+    </p>
+    <h2 class="uk-heading-line">¿Qué testear?</h2>
+    <p class="uk-text-justify">
+        Vamos a testear esencialmente dos cosas: comportamiento y reglas de negocio|casos de uso. Sin meternos en temas
+        de testing, hablando de TDD a nivel general, que debemos testear comportamiento nuevo. Con esto quiero decir que
+        no vamos a testear funciones nativas del lenguaje, ni propiedades de los objetos, ni tipos de datos, ni
+        operadores matemáticos y lógicos. Testeamos comportamiento de las funciones o los objetos que hayamos agregado
+        nosotros al programa. Por otro lado testeamos las reglas de negocio, o al menos, aquellas que necesitemos
+        testear.
+    </p>
+    <h2 class="uk-heading-line">Conclusión</h2>
+    <p class="uk-text-justify">
+        TDD trae muchas ventajas a la experiencia de desarrollo, pero también a la calidad del producto final.
+        De manera muy sencilla y efectiva, aumenta la satisfacción del equipo de desarrollo y también del cliente.
+        Esta es una pequeña introducción a este mundo, pero como siguientes pasos, recomiendo seguir profundizando en
+        técnicas de refactor, escuelas de TDD y otras técnicas de Extreme Programming para complementar.
+    </p>
+    <a href="#" uk-totop uk-scroll></a>
 </body>
 
 </html>
