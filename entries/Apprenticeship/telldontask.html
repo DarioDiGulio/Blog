@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+    <title>Ley de Demeter, Tell don't ask y God Object</title>
+</head>
+
+<body class="uk-margin uk-margin-left uk-margin-right">
+    <a href="../../index.html" class="uk-button uk-button-text uk-margin-bottom">Volver</a>
+    <div class="uk-cover-container uk-height-medium">
+        <img src="../../images/smellcode.jfif" alt="Clean Code" uk-cover />
+    </div>
+    <h1 class="uk-heading-divider">Ley de Demeter, Tell don't ask y God Object</h1>
+    <h2 class="uk-heading-line">Introducción</h2>
+    <p class="uk-text-justify">
+        Ahora vamos a hablar de diseño, de errores en el diseño de software y algunos principios que nos van a ayudar a
+        identificarlos y evitarlos o corregirlos.
+    </p>
+    <h2>Ley de Demeter</h2>
+    <p class="uk-text-justify">
+        Un método M de un objeto O, sólo puede invocar métodos en los siguientes objetos:
+    </p>
+    <ol>
+        <li>
+            El propio objeto O, es decir, el objeto que contiene al método.
+        </li>
+        <li>Los parámetros que recibe el método.</li>
+        <li>Los objetos instanciados por el método, es decir, variables locales creadas en el método.</li>
+        <li>
+            Los objetos contenidos directamente en el objeto O.
+        </li>
+        <li> Los objetos accesibles globalmente desde el método M.
+        </li>
+    </ol>
+    <h2>Tell don't ask</h2>
+    <p class="uk-text-justify">
+        Tell don't ask es un principio que nos advierte sobre la comunicación entre nuestros objetos. Una de las ideas
+        de la POO es poder limitar las responsabilidades de los objetos y tener bien claras a cuál corresponde cada una.
+        Veamos por ejemplo, el siguiente código:
+    </p>
+    <code>
+        friend.wallet.get(10);
+    </code>
+    <p class="uk-text-justify">
+        Lo que vemos en este ejemplo es que el usuario conoce demasiados detalles acerca de su amigo. Esto es un exceso
+        de acoplamiento. Además, le resta libertad al objeto <mark>friend</mark> a la hora de elegir su propia
+        implementación
+        Veamos en cambio, si no mejora así:
+    </p>
+    <code>
+        friend.payMe(10);
+    </code>
+    <p class="uk-text-justify">
+        En este segundo ejemplo, sucede todo lo contrario.
+        La idea es que los objetos no guarden unicamente datos, sino de combinarlos con su comportamiento. De esta
+        manera no le preguntamos a las instancias sus datos para validar comportamiento afuera, sino que le decimos qué
+        hacer, y ellas mismas se encargan del comportamiento.
+    </p>
+    <h2 class="uk-heading-line">God Object</h2>
+    <p class="uk-text-justify">
+        Un <mark>God object</mark> es un objeto que viola el principio de responsabilidad única. Pude sucedernos, que
+        para evitar violar la ley de Demeter terminemos creando uno de estos objetos.
+        Tendremos que tener cuidado de no sobrecargar de responsabilidad a nuestros objetos ni tampoco exponer
+        demasiados detalles sobre el comportamiento de los mismos.
+    </p>
+    <h2 class="uk-heading-line">Conclusiones</h2>
+    <p class="uk-text-justify">
+        Como la mayoría de las buenas cosas, un buen diseño, implica un equilibrio. Debemos tener todos estos principios
+        (y otros más) en la cabeza para intentar balancearlos en nuestro software. Incluso muchas veces tendremos que
+        optar entre seguir uno y olvidar otro. Con esto quiero decir que la calidad en el diseño de software es un
+        ideal, no una meta.
+    </p>
+    <a href="" uk-totop uk-scroll></a>
+</body>
+
+</html>
