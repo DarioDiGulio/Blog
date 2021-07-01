@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+    <title>SOLID</title>
+</head>
+
+<body class="uk-margin uk-margin-left uk-margin-right">
+    <a href="../../index.html" class="uk-button uk-button-text uk-margin-bottom">Volver</a>
+    <div class="uk-cover-container uk-height-medium">
+        <img src="../../images/solid.jpeg" alt="Solid" uk-cover />
+    </div>
+    <h1 class="uk-heading-divider">SOLID</h1>
+    <span class="uk-label tag">SOLID</span>
+    <span class="uk-label tag">OOP</span>
+    <span class="uk-label tag">Uncle Bob</span>
+    <h2 class="uk-heading-line">Introducción</h2>
+    <p class="uk-text-justify">
+        SOLID es una sigla que representa cinco principios de diseño de software. Esta sigla fue acuñada por Robert C.
+        Martin, mejor conocido como Uncle Bob. Estos cinco principios forman parte de un cuerpo más grande de principios
+        de diseño, impulsados por Uncle Bob para la programación Orientada a Objetos. Fueron introducidos por primera
+        vez, en el año 2000 en el paper <cite>Design Principles and Design Patterns</cite>. A continuación, hagamos un
+        recorrido y primera aproximación a estos principios.
+    </p>
+    <h2>The Open Closed Principle</h2>
+    <p class="uk-text-justify">
+        Esta es una idea sencilla que nos dice que nuestro programa debe ser fácil de extender o <mark>abierta al cambio
+            y cerrada para la modificación</mark>. Esto quiere decir que debemos plantear nuestro diagrama o esquema en
+        la
+        medida en que nos permita extender fácilmente sus funcionalidades sin la necesidad de tener que entrar a
+        modificar internamente las clases o métodos de las mismas. En palabras del autor sería:
+    <blockquote cite="https://fi.ort.edu.uy/innovaportal/file/2032/1/design_principles.pdf">
+        <p class="uk-margin-small-bottom">We should write our modules so that they can be extended, without requiring
+            them to be modified. In other
+            words, we want to be able to change what the modules do, without changing the
+            source code of the modules.</p>
+        <footer>Robert C. Martin
+            <cite>
+                <a href="https://fi.ort.edu.uy/innovaportal/file/2032/1/design_principles.pdf">
+                    Design Principles and Design Patterns
+                </a>
+            </cite>
+        </footer>
+    </blockquote>
+    </p>
+    <p class="uk-text-justify">
+        Podemos darnos cuenta de que estamos violando este principio cuando tenemos un <code>switch</code> o un
+        <code>if/else</code> anidados, que necesitan ser extendidos con cada incremento en la funcionalidad, por
+        ejemplo. Resolver esto a la manera <mark>SOLID</mark> podría ser usando polimorfismo por ejemplo.
+    </p>
+    <h2 class="uk-heading-line">The Liskov Substitution Principle</h2>
+    <p class="uk-text-justify">
+        El principio de Liskov Substitution nos indica que todas las clases que hereden de una super clase, deben poder
+        ocupar su lugar sin problemas de compilación ni adaptaciones. Se trata de que la herencia no se convierta en una
+        cadena de distintos objetos que comparten algunos componentes, sino de un encadenamiento de especificaciones de
+        la misma entidad.
+    </p>
+    <p class="uk-text-justify">
+        Muchas veces adoptamos la costumbre de preguntarnos si un objeto <i>es</i> otro objeto para validar una
+        hipotética herencia. Pero la herencia no se trata de que un objeto guarde los datos de otros, sino de poder
+        asociar esos datos a un comportamiento. Entonces deberíamos poder preguntarnos, además de si un objeto <i>es</i>
+        otro, si se <i>comporta</i> como otro para plantearnos la posibilidad de incorporar una herencia a nuestro
+        programa.
+    </p>
+    <h2 class="uk-heading-line">The Dependency Inversion Principle</h2>
+    <p class="uk-text-justify">
+        La idea de este principio es que tengamos en cuenta que nuestros objetos deberían ser agnósticos de la
+        implementación de las dependencias. Tendríamos que pensar a las dependencias como algo que se enchufa y
+        desenchufa libremente sin mayores complejidades. Con dependencias nos referimos a Base de Datos, Frontend, etc.
+    </p>
+    <p class="uk-text-justify">
+        Podemos usar la estrategia de establecer un contrato para estas dependencias como una <mark>interface</mark> que
+        nos ayude a manejarlas como si fueran, todas, del mismo tipo. La idea central es que nuestra lógica de negocio
+        no esté atada a la implementación de las dependencias y estas puedan gozar de cierta independencia y
+        versatilidad.
+    </p>
+    <h2 class="uk-heading-line">The Interface Segregation Principle</h2>
+    <p class="uk-text-justify">
+        Este principio nos ayuda a evitar la sobrecarga de funcionalidad en nuestras clases. Imaginemos una clase que es
+        utilizada por muchas otras, no deberíamos simplemente alojar en ella toda la funcionalidad requerida. De lo
+        contrario,
+        podríamos crear interfaces que cumplan con los requerimientos de cada clase y que sea implementada por esa clase
+        funcional.
+        Esto ayuda a la modularización y escalabilidad de nuestro programa.
+    </p>
+    <h2 class="uk-heading-line">The Single Responsibility Principle</h2>
+    <p class="uk-text-justify">
+        Este principio nos dice que nuestros componentes deben estar encargados de una sola cosa, y deberían hacerlo
+        bien. No se trata solo de no agregar funcionalidad de más en nuestras clases sino de que que cada una tenga bien
+        definido su alcance y no se pueda prestar a confusión con otras clases. También tengamos en cuenta que no es
+        solo una estrategia de cómo nombramos nuestras clases y funciones, sino de cómo agrupamos de manera lógica sus
+        funcionalidades.
+    </p>
+    <h2 class="uk-heading-line">Conclusiones</h2>
+    <p class="uk-text-justify">
+        De manera superficial, de esto se tratan los principios de diseño de software <mark>SOLID</mark>. Por supuesto
+        que hay mucha más información por asimilar y sobre todo un análisis más avanzado de cada caso. Es posible que en
+        el futuro nos encontremos con estos principios en conflicto entre sí y tengamos que tomar la decisión de optar
+        por uno en lugar de otro. Lo importante es tenerlos presente para poder identificarlos en el momento en el que
+        los estemos violando.
+    </p>
+    <a href="" uk-totop uk-scroll></a>
+</body>
+
+</html>
