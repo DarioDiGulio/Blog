@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+    <title>Utilidades para un test</title>
+</head>
+
+<body class="uk-margin uk-margin-left uk-margin-right">
+    <a href="../../index.html" class="uk-button uk-button-text uk-margin-bottom">Volver</a>
+    <div class="uk-cover-container uk-height-medium">
+        <img src="../../images/test.jpg" alt="Test de la vista" uk-cover />
+    </div>
+    <h1 class="uk-heading-divider">Utilidades para un test</h1>
+    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+        <li><a href="#">02/07/2021</a></li>
+        <li><a href="#">Dario Di Gulio</a></li>
+    </ul>
+    <span class="uk-label tag">Development</span>
+    <span class="uk-label tag">TDD</span>
+    <span class="uk-label tag">Given-When-Then</span>
+    <span class="uk-label tag">Martin Fowler</span>
+    <span class="uk-label tag">Assert</span>
+    <h2 class="uk-heading-line">Introducción</h2>
+    <p class="uk-text-justify">
+        Cuando hacemos <mark><a href="./tdd.html">TDD</a></mark>, la herramienta más importante que tenemos es nuestro
+        test. Hay algunas cosas que deberíamos tener en cuenta a la hora de escribir un test. Por ejemplo la morfología,
+        la sintaxis, la escalabilidad, etc. De todas esas cosas vamos a hablar hoy.
+    </p>
+    <h2 class="uk-heading-line">Given-When-Then</h2>
+    <p class="uk-text-justify">
+        Given-When-Then es una técnica que nos habla de la morfología del test. Nos sugiere dividir nuestro test en tres
+        secciones:
+    <ul class="uk-list">
+        <li>Given: nos ayuda a construir la escena previa al comportamiento que queremos testear.</li>
+        <li>When: es el comportamiento específico que necesitamos testear.</li>
+        <li>Then: es el escenario que nos gustaría encontrar, teniendo en cuenta las pre condiciones y el comportamiento
+            que acabamos de ejecutar.</li>
+    </ul>
+    </p>
+    <p class="uk-text-justify">
+        No son importantes los nombres, ya que de hecho, esta morfología no le pertenece exclusivamente a los test y en
+        otros ámbitos se nombra de manera diferente. Lo importante es que si adoptamos esta técnica para la escritura de
+        nuestros test, la tengamos en cuenta como una cuestión morfológica. Aclaro esto, ya que dependiendo de la
+        tecnología con la que estemos testeando, la sintaxis puede variar. Pero en cualquier caso deberíamos poder
+        identificar estas tres secciones, <mark>Given-When-Then</mark> Y lo hacemos, fundamentalmente, para estandarizar
+        la legibilidad de nuestros test. De esta manera, a simple vista, podemos reconocer cada parte de nuestro test si
+        tener que interpretarlo en profundidad.
+    </p>
+    <h2 class="uk-heading-line">Assert What?</h2>
+    <p class="uk-text-justify">
+        En el post sobre <mark><a href="./tdd.html">TDD</a></mark> vimos cuáles son las cosas que nos interesarían
+        testear y cuáles no. En esta oportunidad me gustaría que reflexionemos un poco sobre cómo construimos nuestras
+        aserciones. Cuando hacemos <mark>TDD</mark>, lo más probable y recomendable es que usemos un framework para
+        construir nuestros test. Esto lo hacemos para facilitarnos el trabajo, pero también para optar por ciertos
+        estándares.
+        Algunas de las más usadas para tecnologías Java son: <a href="https://junit.org/junit5/">Junit</a> o <a
+            href="https://assertj.github.io/doc/">AssertJ</a>.
+    </p>
+    <p class="uk-text-justify">
+        Estos entornos de trabajo, nos ayudan a construir test más legibles, ya que nos ofrecen un montón de aserciones
+        que podemos usar casi para todos los casos que se nos ocurran. La ventaja de esto es que podemos escribir test
+        diciendo <i>lo que</i> que queremos testear (comportamiento) y no <i>cómo</i> lo queremos hacer
+        (implementación). Esto hace a nuestros test más legibles y por lo tanto, más mantenibles y escalables. Veamos un
+        ejemplo de esto:
+    </p>
+    <p class="uk-text-justify">En lugar de esto:</p>
+    <code>
+        assertThat((150 * 10) > 100);
+    </code>
+    <p class="uk-text-justify">Podríamos hacer mejor esto:</p>
+    <code>
+        int result = 150 * 10;
+        <br>
+        assertThat(result).isGreaterThan(100);
+    </code>
+    <h2 class="uk-heading-line">Conclusión</h2>
+    <p class="uk-text-justify">
+        Nuestros test, son parte de nuestro código y deberíamos procurar que cumplan con las mismas condiciones de
+        calidad que el código productivo. Por lo que nos importa su legibilidad, mantenibilidad, escalabilidad y buena
+        comunicación. Tengamos test bien escritos, con una morfología homogénea y bien modularizados. Incluso podemos
+        tener algunos métodos auxiliares que ayuden a nuestros test a ser más claros y concisos.
+    </p>
+    <a href="" uk-totop uk-scroll></a>
+</body>
+
+</html>
