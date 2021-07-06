@@ -10,40 +10,63 @@
   <!-- UIkit JS -->
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+  <link rel="stylesheet" href="styles/index.css">
   <title>Mi blog</title>
 </head>
 
-<body class="uk-margin uk-margin-left uk-margin-right">
-  <h1 class="uk-heading-divider">Mi blog</h1>
-  <div>
+<body>
+  <nav class="uk-navbar-container uk-margin" uk-navbar>
+    <div class="uk-navbar-left">
+
+      <a class="uk-navbar-item uk-logo" href="#">
+        <img class="uk-border-pill" src="./images/eu.jpg" width="50" height="" alt="Border pill">
+      </a>
+
+
+      <div class="uk-navbar-item">
+        <div>Mi <a href="https://github.com/DarioDiGulio?tab=repositories">GitHub</a></div>
+      </div>
+
+      <div class="uk-navbar-item">
+        <form>
+          <div class="uk-inline">
+            <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: close" id="clearSearch"></a>
+            <input class="uk-input" type="text" placeholder="Search" id="search">
+        </div>
+        </form>
+      </div>
+
+    </div>
+  </nav>
+  <div class="uk-margin-left">
     <h2>Entradas</h2>
     <dl>
       <dt>Sobre ciencia</dt>
       <dd>Artículos relacionados con el mundo de la ciencia, generalmente divagues con más preguntas que respuestas.
       </dd>
-      <li>
+      <li class="entry">
         <a href="entries/la-ciencia.html" class="uk-button uk-button-text">¿Qué es la Ciencia?</a>
       </li>
     </dl>
     <dl>
       <dt>Sobre informática y ciencias de la computación</dt>
       <dd>Resúmenes, reflexiones y apuntes sobre mis aprendizajes en el área de la programación y la informática.</dd>
-      <li>
+      <li class="entry">
         <a href="entries/Apprenticeship/hola-mundo.html" class="uk-button uk-button-text">Hola Mundo</a>
       </li>
-      <li>
+      <li class="entry">
         <a href="entries/Apprenticeship/ide-vs-editor.html" class="uk-button uk-button-text">IDE vs Editor de texto</a>
       </li>
-      <li>
+      <li class="entry">
         <a href="entries/Apprenticeship/tdd.html" class="uk-button uk-button-text">Test Driven Development</a>
       </li>
-      <li>
+      <li class="entry">
         <a href="entries/Apprenticeship/telldontask.html" class="uk-button uk-button-text">Tell don't ask</a>
       </li>
-      <li>
+      <li class="entry">
         <a href="entries/Apprenticeship/solid.html" class="uk-button uk-button-text">Solid</a>
       </li>
-      <li>
+      <li class="entry">
         <a href="entries/Apprenticeship/testway.html" class="uk-button uk-button-text">Utilidades para un test</a>
       </li>
     </dl>
@@ -53,6 +76,7 @@
       <img class="uk-border-pill" src="images/github-logo.png" width="25" height="25" alt="Github" />
     </a>
   </div>
+  <script src="search.js"></script>
 </body>
 
 </html>
