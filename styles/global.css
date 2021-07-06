@@ -5,3 +5,7 @@ li {
 input {
     border-radius: 10px !important;
 }
+
+.uk-label {
+    border-radius: 5px !important;
+}
