@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/global.css">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+    <title>SOLID - Liskov Substitution Principle</title>
+</head>
+
+<body class="uk-margin uk-margin-left uk-margin-right">
+    <a href="../../index.html" class="uk-button uk-button-text uk-margin-bottom">Volver</a>
+    <div class="uk-cover-container uk-height-medium">
+        <img src="../../images/herencia.jpg" alt="Solid" uk-cover />
+    </div>
+    <h1 class="uk-heading-divider">Liskov Substitution Principle</h1>
+    <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
+        <li><a href="#">06/07/2021</a></li>
+        <li><a href="#">Dario Di Gulio</a></li>
+    </ul>
+    <span class="uk-label tag">SOLID</span>
+    <span class="uk-label tag">POO</span>
+    <span class="uk-label tag">Herencia</span>
+    <span class="uk-label tag">Uncle Bob</span>
+    <span class="uk-label tag">Sandro Mancuso</span>
+    <h2 class="uk-heading-line">Introducción</h2>
+    <p class="uk-text-justify">
+        En este principio vamos a trabajar sobre el concepto de herencia. Es uno de los principales elementos en la
+        programación orientada a objetos y es probable, que tengamos algunos conceptos herrados al respecto, así fue
+        para mi. Vamos a hablar del Liskov Substitution Principle, cómo identificar un esquema de herencia y cómo
+        validar nuestro modelo.
+    </p>
+    <h2>Heredar</h2>
+    <p class="uk-text-justify">
+        La herencia es el tipo de relación más fuerte que existe en la programación orientada a objetos. Esto quiere
+        decir que es irreversible, no solamente verticalmente sino también de manera horizontal. Estamos diciendo que
+        una instancia de una especificación de una clase, nunca podría ser de otra especificación. Por lo tanto, tomar
+        la decisión de heredar, debería hacerse con más detenimiento y no con la liviandad con la que solemos hacerlo.
+    </p>
+    <p class="uk-text-justify">
+        No debemos optar por la herencia cuando un objeto <i>es</i> como otro objeto. Muchas veces nos hacemos este tipo
+        de preguntas pensando en modelar la realidad. A veces esa estrategia nos genera inconvenientes, por ejemplo, ¿un
+        cuadrado es un rectángulo? En la realidad sí, pero en nuestro programa tal vez no debería.
+    </p>
+    <p class="uk-text-justify">
+        Tampoco es suficiente argumento para heredar la intención de reutilizar código. Muchas veces nos encontramos en
+        la situación de que varias clases tienen las mismas propiedades o constructores similares, incluso compartiendo
+        algunos métodos. Es claro que eso es síntoma de un problema de diseño pero no siempre la respuesta sea la
+        herencia. Existen las interfaces también que nos permiten abstraer esa funcionalidad, o tal vez estemos
+        necesitando otro objeto colaborador.
+    </p>
+    <h2 class="uk-heading-line">Liskov Substitution Principle</h2>
+    <p class="uk-text-justify">
+        Entonces, ¿cuándo sí podemos heredar?.
+    </p>
+    <p class="uk-text-justify">
+        Bueno, según este principio, tendremos herencia cuando un objeto <mark>se comporte</mark> como otro. Por
+        supuesto que no debería comportarse exactamente igual, ya que sino no tendría sentido separar los objetos. La
+        forma de comprobar que no estamos violando este principio es pensar lo siguiente: ¿Podrían todas las clases
+        hijas ocupar el lugar de sus clases base y que mi programa no se rompa? Es obvio que cambiarán algunos
+        resultados, pero mi programa debería poder seguir funcionando.
+    </p>
+    <h2 class="uk-heading-line">Conclusiones</h2>
+    <p class="uk-text-justify">
+        Entonces deberíamos cambiar algunas reflexiones a la hora de elegir la estrategia de heredar. Tener en cuenta el
+        nivel de solides que la relación de herencia representa, tener en cuenta pasos intermedios como interfaces u
+        objetos colaboradores, etc.
+        Si estamos usando separación de instancias (instanceof) para separar el flujo del comportamiento estamos
+        rompiendo con el principio Liskov Substitution
+        Finalmente, podemos validar nuestro modelo al ver cómo lo usan sus clientes. 
+    </p>
+    <a href="" uk-totop uk-scroll></a>
+</body>
+
+</html>
