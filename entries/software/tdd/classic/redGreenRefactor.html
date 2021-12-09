@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <!-- UIkit CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css"
+    />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+    <title>Test Driven Development</title>
+  </head>
+
+  <body class="uk-margin uk-margin-left uk-margin-right">
+    <a href="../../index.html" class="uk-button uk-button-text uk-margin-bottom"
+      >Volver</a
+    >
+    <div class="uk-cover-container uk-height-medium">
+      <img src="./tdd.png" alt="Red - Green - Refactor" uk-cover />
+    </div>
+    <h1 class="uk-heading-divider">Test Driven Development</h1>
+    <ul
+      class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top"
+    >
+      <li><a href="#">24/06/2021</a></li>
+      <li><a href="../../../../index.html">Dario Di Gulio</a></li>
+    </ul>
+    <span class="uk-label tag">TDD</span>
+    <span class="uk-label tag">Diseño de Software</span>
+    <span class="uk-label tag">Red, Green, Refactor</span>
+    <span class="uk-label tag">Uncle Bob</span>
+    <span class="uk-label tag">Kent Beck</span>
+    <h2 class="uk-heading-line">Introducción</h2>
+    <p class="uk-text-justify">
+      <mark>TDD</mark> es una técnica de diseño de software que propone empezar
+      por los test, y que el diseño vaya surgiendo de ellos. Pregonada por
+      <i>Kent Beck, Robert Martin, Sandro Mancuso, etc.</i>
+      aunque con distintas escuelas entre ellos pero todos coinciden en los
+      principales lineamientos.
+    </p>
+    <p class="uk-text-justify">
+      Entre sus ventajas se encuentra una mejor cobertura de los test
+      automatizados, un mejor diseño del software y menor presencia de bugs,
+      entre otras. A continuación expondré algunas características de la idea
+      clásica y algunos puntos comunes entre las diferentes escuelas, a modo
+      introductorio.
+    </p>
+    <h2 class="uk-heading-line">Etapas: Red, Green y Refactor</h2>
+    <p class="uk-text-justify">
+      En primer lugar tenemos que identificar, en nuestra planificación, el paso
+      hacia adelante testeable, más pequeño posible. En nuestro caso, queremos
+      hacer una calculadora desde cero y nuestra primer funcionalidad será la de
+      poder sumar. La técnica clásica se trata de tres sencillos pasos que
+      desarrollamos a continuación:
+    </p>
+    <h3 class="uk-heading">Red</h3>
+    <p class="uk-text-justify">
+      El primer paso que vamos a realizar es
+      <mark>escribir un test que falle (RED).</mark> Por supuesto, en esta etapa
+      es probable que nuestro código ni siquiera compile. Justamente ahí radica
+      el aporte más importante de <mark>TDD</mark> al diseño, al usar código que
+      todavía no existe, lo hacemos diseñándolo como nos gustaría usarlo. Para
+      casos más complejos es importante, en este paso, tener una reflexión
+      previa sobre el diseño que vamos a encarar, no en detalle, pero sí un
+      panorama general.
+    </p>
+    <p class="uk-text-justify">
+      A penas nuestro código compile, ya podremos ejecutarlo. Ahí es cuando
+      vamos a estar esperando que el test falle por la razón correcta. Es decir,
+      que si estamos testeando una suma, por ejemplo, el test nos devuelva el
+      resultado incorrecto de la suma. Una razón incorrecta por ejemplo en ese
+      caso sería error de tipos. Veamos algún ejemplo de cómo tendríamos el
+      código en esta etapa.
+    </p>
+    <div class="uk-flex uk-flex-center uk-flex-column">
+      <img
+        src="test.png"
+        class="uk-margin"
+        alt="Red - Green - Refactor"
+      />
+      <img
+        src="codeRed.png"
+        class="uk-margin"
+        alt="Red - Green - Refactor"
+      />
+    </div>
+    <h3 class="uk-heading">Green</h3>
+    <p class="uk-text-justify">
+      Una vez creado el código con nuestro diseño aplicado, pasamos al segundo
+      paso que se trata de
+      <mark>hacer pasar ese test de la forma más sencilla posible (GREEN)</mark
+      >, sin preocuparnos por el diseño, ni la performance ni nadad de eso. En
+      este instante, habiendo visto al test fallar por la razón correcta y ahora
+      verlo en verde, tenemos confianza de que nuestro test nos está protegiendo
+      bien de esa funcionalidad. De hecho es por eso fundamentalmente que lo
+      queremos ver fallar.
+    </p>
+    <p class="uk-text-justify">
+      En esta etapa, nuestro código tiene el siguiente aspecto:
+    </p>
+    <div class="uk-flex uk-flex-center uk-flex-column">
+      <img
+        src="codeGreen.png"
+        class="uk-margin"
+        alt="Red - Green - Refactor"
+      />
+    </div>
+    <h3 class="uk-heading">Refactor</h3>
+    <p class="uk-text-justify">
+      Finalmente, luego de estos dos pasos, llegamos al momento de
+      <mark>limpiar nuestro código (REFACTOR).</mark> Comenzando por el código
+      productivo y en un segundo momento por nuestros test, este es el momento
+      de pensar bien nombres de variables, clases y funciones, crear objetos
+      nuevos, eliminar duplicaciones de código, etc. Lo interesante de este
+      paso, es que a cada pequeño cambio, podemos ejecutar los test e ir
+      avanzando con el refactor, con la tranquilidad de que todo sigue
+      funcionando igual. En caso de que algo falle, sabemos exactamente dónde se
+      encuentra el error y tardaremos, <i>nada</i> en volver para atrás y
+      corregirlo.
+    </p>
+    <p class="uk-text-justify">
+      En nuestro ejemplo no tenemos nada útil para mejorar porque es un caso de
+      uso muy simple. De todas formas me gustaría destacar que es en esta etapa
+      donde, si estamos aplicando bien la técnica más nos vamos a detener. Esto
+      es porque es acá donde podremos aplicar técnicas de diseño, patrones,
+      técnicas de refactor y cosas más avanzadas que espero podamos conversar en
+      este espacio más adelante. Pero a medida que mejoremos nuestra musculatura
+      aplicando TDD, crear el Test y hacerlo pasar será algo casi automático o
+      relativamente sencillo en la mayoría de los casos.
+    </p>
+    <p class="uk-text-justify">
+      Una recomendación para esta parte: es muy importante, durante el proceso
+      de refactor, no permanecer en rojo mucho tiempo. ¿Qué significa
+      <i>mucho</i>?, dependerá tu expertis. Esto es porque perderíamos una de
+      las grandes ventajas de usar <mark>TDD</mark> que es, ante un error, no
+      estar muy lejos del cambio en el código que lo hizo fallar para poder
+      corregirlo rápido. Por esto es recomendable avanzar en el refactor
+      mediante lo que llamamos <mark>baby steps</mark>, cosa en la que podemos
+      profundizar más adelante, pero básicamente se trata de dar
+      consecutivamente el paso más pequeño posible siempre.
+    </p>
+    <h2 class="uk-heading-line">Conclusión</h2>
+    <p class="uk-text-justify">
+      TDD trae muchas ventajas a la experiencia de desarrollo, pero también a la
+      calidad del producto final. De manera muy sencilla y efectiva, aumenta la
+      satisfacción del equipo de desarrollo y también del cliente. Esta es una
+      pequeña introducción a este mundo, pero como siguientes pasos, recomiendo
+      seguir profundizando en técnicas de refactor, escuelas de TDD y otras
+      técnicas de Extreme Programming para complementar. Todos estos temas los
+      iremos tratando en las sucesivas entradas de este blog.
+    </p>
+    <a href="#" uk-totop uk-scroll></a>
+  </body>
+</html>
