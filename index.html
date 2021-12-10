@@ -1,94 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- UIkit CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- UIkit CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/css/uikit.min.css" />
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="styles/global.css" />
+    <title>Mañana es mejor</title>
+  </head>
 
-  <!-- UIkit JS -->
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.3/dist/js/uikit-icons.min.js"></script>
-  <link rel="stylesheet" href="styles/global.css">
-  <title>Mi blog</title>
-</head>
+  <body>
+    <nav class="uk-navbar-container uk-margin" uk-navbar>
+      <div class="uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="#">
+          <img
+            class="uk-border-pill"
+            src="./images/eu.jpg"
+            width="50"
+            height=""
+            alt="Border pill"
+          />
+        </a>
 
-<body>
-  <nav class="uk-navbar-container uk-margin" uk-navbar>
-    <div class="uk-navbar-left">
-
-      <a class="uk-navbar-item uk-logo" href="#">
-        <img class="uk-border-pill" src="./images/eu.jpg" width="50" height="" alt="Border pill">
-      </a>
-
-
-      <div class="uk-navbar-item">
-        <div>Mi <a href="https://github.com/DarioDiGulio?tab=repositories">GitHub</a></div>
-      </div>
-
-      <div class="uk-navbar-item">
-        <form>
-          <div class="uk-inline">
-            <a class="uk-form-icon uk-form-icon-flip" href="#" uk-icon="icon: close" id="clearSearch"></a>
-            <input class="uk-input" type="text" placeholder="Search" id="search">
+        <div class="uk-navbar-item">
+          <div>
+            Mi
+            <a href="https://github.com/DarioDiGulio?tab=repositories"
+              >GitHub</a
+            >
+          </div>
         </div>
-        </form>
+
+        <div class="uk-navbar-item">
+          <form>
+            <div class="uk-inline">
+              <a
+                class="uk-form-icon uk-form-icon-flip"
+                href="#"
+                uk-icon="icon: close"
+                id="clearSearch"
+              ></a>
+              <input
+                class="uk-input"
+                type="text"
+                placeholder="Search"
+                id="search"
+              />
+            </div>
+          </form>
+        </div>
       </div>
-
+    </nav>
+    <div class="uk-margin">
+      Mañana es mejor es un espacio que pretende volcar información procesada de
+      distintas disciplinas, entre las cuales se encuentran la Ciencia, Política
+      y el mundo de la tecnología. No pretende ser un ambiente de consulta
+      técnica ni rigurosa sobre algunos hechos o posturas, ni pretende ilustrar
+      seres con párrafos y oraciones poco originales. Por el contrario aspira a
+      ser una reserva digital de los pensamientos más destacados, y que puedo
+      estructurar, que circulan con autonomía en mi cotidianeidad dentro de mi.
+      Te garantizo que voy a cometer muchos errores y en otros casos no podremos
+      coincidir. Pero a cambio te ofrezco un prisma optimista en cada tópico que
+      afronte este medio y calculo sea ese el principal motor de todas mis
+      palabras: difundir la idea de que el mundo que viene es mejor que el que
+      tenemos. Seguro dirás, ¿basado en qué pensás eso?, basado en mi propia
+      opinión.
     </div>
-  </nav>
-  <div class="uk-margin-left">
-    <h2>Entradas</h2>
-    <dl>
-      <dt>Sobre ciencia</dt>
-      <dd>Artículos relacionados con el mundo de la ciencia, generalmente divagues con más preguntas que respuestas.
-      </dd>
-      <li class="entry">
-        <a href="entries/science/la-ciencia.html" class="uk-button uk-button-text">¿Qué es la Ciencia?</a>
-      </li>
-    </dl>
-    <dl>
-      <dt>Sobre informática y ciencias de la computación</dt>
-      <dd>Resúmenes, reflexiones y apuntes sobre mis aprendizajes en el área de la programación y la informática.</dd>
-      <li class="entry">
-        <a href="entries/software/hola-mundo.html" class="uk-button uk-button-text">Hola Mundo</a>
-      </li>
-      <li class="entry">
-        <a href="entries/software/ide-vs-editor.html" class="uk-button uk-button-text">IDE vs Editor de texto</a>
-      </li>
-      <li class="entry">
-        <a href="entries/software/tdd/classic/redGreenRefactor.html" class="uk-button uk-button-text">Test Driven Development</a>
-      </li>
-      <li class="entry">
-        <a href="entries/software/telldontask.html" class="uk-button uk-button-text">Tell don't ask</a>
-      </li>
-      <li class="entry">
-        <a href="entries/software/solid.html" class="uk-button uk-button-text">Solid</a>
-      </li>
-      <li class="entry">
-        <a href="entries/software/testway.html" class="uk-button uk-button-text">Utilidades para un test</a>
-      </li>
-      <li class="entry">
-        <a href="entries/software/singleResponsibility.html" class="uk-button uk-button-text">Single Responsibility Principle</a>
-      </li>
-      <li class="entry">
-        <a href="entries/software/liskovSubstitution.html" class="uk-button uk-button-text">Liskov Substitution Principle</a>
-      </li>
-      <li class="entry">
-        <a href="entries/software/katas.html" class="uk-button uk-button-text">Katas</a>
-      </li>
-      <li class="entry">
-        <a href="entries/software/agile.html" class="uk-button uk-button-text">Agile</a>
-      </li>
-    </dl>
-  </div>
-  <div class="uk-position-bottom-center uk-overlay uk-overlay-default">
-    <a href="https://github.com/DarioDiGulio" class="uk-button uk-button-text">
-      <img class="uk-border-pill" src="images/github-logo.png" width="25" height="25" alt="Github" />
-    </a>
-  </div>
-  <script src="./js/search.js"></script>
-</body>
-
+    <div class="uk-margin-left">
+      <h2>Entradas</h2>
+      <dl>
+        <dt>Sobre ciencia</dt>
+        <dd>
+          Artículos relacionados con el mundo de la ciencia, generalmente
+          divagues con más preguntas que respuestas.
+        </dd>
+        <li class="entry">
+          <a
+            href="entries/science/la-ciencia.html"
+            class="uk-button uk-button-text"
+            >¿Qué es la Ciencia?</a
+          >
+        </li>
+      </dl>
+      <dl>
+        <dt>Sobre informática y ciencias de la computación</dt>
+        <dd>
+          Resúmenes, reflexiones y apuntes sobre mis aprendizajes en el área de
+          la programación y la informática.
+        </dd>
+        <li class="entry">
+          <a
+            href="entries/software/hola-mundo.html"
+            class="uk-button uk-button-text"
+            >Hola Mundo</a
+          >
+        </li>
+        <li class="entry">
+          <a
+            href="entries/software/ide-vs-editor.html"
+            class="uk-button uk-button-text"
+            >IDE vs Editor de texto</a
+          >
+        </li>
+        <li class="entry">
+          <a
+            href="entries/software/tdd/classic/redGreenRefactor.html"
+            class="uk-button uk-button-text"
+            >Test Driven Development</a
+          >
+        </li>
+        <li class="entry">
+          <a
+            href="entries/software/telldontask.html"
+            class="uk-button uk-button-text"
+            >Tell don't ask</a
+          >
+        </li>
+        <li class="entry">
+          <a href="entries/software/solid.html" class="uk-button uk-button-text"
+            >Solid</a
+          >
+        </li>
+        <li class="entry">
+          <a
+            href="entries/software/testway.html"
+            class="uk-button uk-button-text"
+            >Utilidades para un test</a
+          >
+        </li>
+        <li class="entry">
+          <a
+            href="entries/software/singleResponsibility.html"
+            class="uk-button uk-button-text"
+            >Single Responsibility Principle</a
+          >
+        </li>
+        <li class="entry">
+          <a
+            href="entries/software/liskovSubstitution.html"
+            class="uk-button uk-button-text"
+            >Liskov Substitution Principle</a
+          >
+        </li>
+        <li class="entry">
+          <a href="entries/software/katas.html" class="uk-button uk-button-text"
+            >Katas</a
+          >
+        </li>
+        <li class="entry">
+          <a href="entries/software/agile.html" class="uk-button uk-button-text"
+            >Agile</a
+          >
+        </li>
+      </dl>
+    </div>
+    <div class="uk-position-bottom-center uk-overlay uk-overlay-default">
+      <a
+        href="https://github.com/DarioDiGulio"
+        class="uk-button uk-button-text"
+      >
+        <img
+          class="uk-border-pill"
+          src="images/github-logo.png"
+          width="25"
+          height="25"
+          alt="Github"
+        />
+      </a>
+    </div>
+    <script src="./js/search.js"></script>
+  </body>
 </html>
