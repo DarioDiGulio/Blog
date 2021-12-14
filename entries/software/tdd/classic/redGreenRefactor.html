@@ -39,17 +39,26 @@
     <p class="uk-text-justify">
       <mark>TDD</mark> es una técnica de diseño de software que propone empezar
       por los test, y que el diseño vaya surgiendo de ellos. Pregonada por
-      <i>Kent Beck, Robert Martin, Sandro Mancuso, etc.</i>
+      <i>Kent Beck, Robert Martin, Martin Fowler, etc.</i>
       aunque con distintas escuelas entre ellos pero todos coinciden en los
       principales lineamientos.
     </p>
     <p class="uk-text-justify">
       Entre sus ventajas se encuentra una mejor cobertura de los test
       automatizados, un mejor diseño del software y menor presencia de bugs,
-      entre otras. A continuación expondré algunas características de la idea
-      clásica y algunos puntos comunes entre las diferentes escuelas, a modo
-      introductorio.
+      entre otras. Si bien <mark>TDD</mark> no nos garantiza un buen diseño, el
+      hecho de hacer las cosas testeables nos lleva a desacoplarlas mejor y eso
+      ya es ganancia. De sus ventajas más importantes está la cuestión
+      metodológica: <mark>TDD</mark> nos propone abordar la complejidad en pasos
+      pequeños (un Test) y esto es mucho más eficiente y satisfactorio como
+      metodología de desarrollo. A continuación expondré algunas características
+      de la idea clásica y algunos puntos comunes entre las diferentes escuelas,
+      a modo introductorio. En artículos futuros intentaremos profundizar en las
+      diferencias que existen, sus ventajas y desventajas y las formas que
+      existen para aplicarlas.
     </p>
+    <h2 class="uk-heading-line">Primero, ¿qué es un Test?</h2>
+
     <h2 class="uk-heading-line">Etapas: Red, Green y Refactor</h2>
     <p class="uk-text-justify">
       En primer lugar tenemos que identificar, en nuestra planificación, el paso
@@ -63,38 +72,41 @@
       El primer paso que vamos a realizar es
       <mark>escribir un test que falle (RED).</mark> Por supuesto, en esta etapa
       es probable que nuestro código ni siquiera compile. Justamente ahí radica
-      el aporte más importante de <mark>TDD</mark> al diseño, al usar código que
-      todavía no existe, lo hacemos diseñándolo como nos gustaría usarlo. Para
-      casos más complejos es importante, en este paso, tener una reflexión
-      previa sobre el diseño que vamos a encarar, no en detalle, pero sí un
-      panorama general.
+      el aporte más importante de <mark>TDD</mark> al diseño del software, al
+      tener que usar un código que todavía no existe para construir el test, nos
+      obliga a pensar primero cómo queremos usarlo, ahí es cuando estamos
+      diseñando. Para casos más complejos es importante, en este paso, tener una
+      reflexión previa sobre el diseño que vamos a encarar, no en detalle, pero
+      sí un panorama general. Lo que sí podría ayudarnos mucho es hacer una
+      mínima planificación del problema que queremos resolver: qué pasos
+      incluye, qué lugares del código hay que modificar, detalles a tener en
+      cuenta, etc. Al dividir el problema en partes es muy común perderse en el
+      camino y esta planificación nos ayuda a tener un Norte firme y claro.
     </p>
     <p class="uk-text-justify">
-      A penas nuestro código compile, ya podremos ejecutarlo. Ahí es cuando
-      vamos a estar esperando que el test falle por la razón correcta. Es decir,
-      que si estamos testeando una suma, por ejemplo, el test nos devuelva el
-      resultado incorrecto de la suma. Una razón incorrecta por ejemplo en ese
-      caso sería error de tipos. Veamos algún ejemplo de cómo tendríamos el
-      código en esta etapa.
+      Nuestro objetivo en este paso, luego de haber diseñado cómo queremos usar
+      este código, es lograr que el test compile. Esto significa crear todas las
+      propiedades y métodos que el test nos haya pedido pero todo vacío o sin
+      valor alguno. Apenas nuestro código compile ya podremos ejecutarlo. Ahí es
+      cuando queremos ver al test fallar por la razón correcta. Llamamos razón
+      correcta a una respuesta válida (de forma) pero equivocada (de contenido).
+      Por ejemplo, sumando 2 y 1, una falla correcta sería un 0 como resultado
+      pero no una excepción. Una razón incorrecta por ejemplo en ese caso sería
+      error de tipos. Razones incorrectas podrían ser también fallas en el
+      escenario que creamos para el test, es decir el estado al que llevamos al
+      programa antes de ejecutar el cuerpo del test. Veamos algún ejemplo de
+      cómo tendríamos el código en esta etapa.
     </p>
     <div class="uk-flex uk-flex-center uk-flex-column">
-      <img
-        src="test.png"
-        class="uk-margin"
-        alt="Red - Green - Refactor"
-      />
-      <img
-        src="codeRed.png"
-        class="uk-margin"
-        alt="Red - Green - Refactor"
-      />
+      <img src="test.png" class="uk-margin" alt="Red - Green - Refactor" />
+      <img src="codeRed.png" class="uk-margin" alt="Red - Green - Refactor" />
     </div>
     <h3 class="uk-heading">Green</h3>
     <p class="uk-text-justify">
       Una vez creado el código con nuestro diseño aplicado, pasamos al segundo
       paso que se trata de
       <mark>hacer pasar ese test de la forma más sencilla posible (GREEN)</mark
-      >, sin preocuparnos por el diseño, ni la performance ni nadad de eso. En
+      >, sin preocuparnos por el diseño, ni la performance ni nada de eso. En
       este instante, habiendo visto al test fallar por la razón correcta y ahora
       verlo en verde, tenemos confianza de que nuestro test nos está protegiendo
       bien de esa funcionalidad. De hecho es por eso fundamentalmente que lo
@@ -104,11 +116,7 @@
       En esta etapa, nuestro código tiene el siguiente aspecto:
     </p>
     <div class="uk-flex uk-flex-center uk-flex-column">
-      <img
-        src="codeGreen.png"
-        class="uk-margin"
-        alt="Red - Green - Refactor"
-      />
+      <img src="codeGreen.png" class="uk-margin" alt="Red - Green - Refactor" />
     </div>
     <h3 class="uk-heading">Refactor</h3>
     <p class="uk-text-justify">
@@ -136,7 +144,7 @@
     <p class="uk-text-justify">
       Una recomendación para esta parte: es muy importante, durante el proceso
       de refactor, no permanecer en rojo mucho tiempo. ¿Qué significa
-      <i>mucho</i>?, dependerá tu expertis. Esto es porque perderíamos una de
+      <i>mucho</i>?, dependerá tu experiencia. Esto es porque perderíamos una de
       las grandes ventajas de usar <mark>TDD</mark> que es, ante un error, no
       estar muy lejos del cambio en el código que lo hizo fallar para poder
       corregirlo rápido. Por esto es recomendable avanzar en el refactor
