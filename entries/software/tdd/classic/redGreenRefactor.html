@@ -38,27 +38,74 @@
     <h2 class="uk-heading-line">Introducción</h2>
     <p class="uk-text-justify">
       <mark>TDD</mark> es una técnica de diseño de software que propone empezar
-      por los test, y que el diseño vaya surgiendo de ellos. Pregonada por
+      por los test y que el diseño vaya surgiendo de ellos. Pregonada por
       <i>Kent Beck, Robert Martin, Martin Fowler, etc.</i>
       aunque con distintas escuelas entre ellos pero todos coinciden en los
-      principales lineamientos.
+      principales lineamientos. <mark>TDD</mark> se encuentra enmarcado dentro
+      de las técnicas sugeridas por <mark>Extreme Programming</mark> en su
+      apartado de pruebas automatizadas.
     </p>
     <p class="uk-text-justify">
       Entre sus ventajas se encuentra una mejor cobertura de los test
       automatizados, un mejor diseño del software y menor presencia de bugs,
       entre otras. Si bien <mark>TDD</mark> no nos garantiza un buen diseño, el
       hecho de hacer las cosas testeables nos lleva a desacoplarlas mejor y eso
-      ya es ganancia. De sus ventajas más importantes está la cuestión
-      metodológica: <mark>TDD</mark> nos propone abordar la complejidad en pasos
-      pequeños (un Test) y esto es mucho más eficiente y satisfactorio como
-      metodología de desarrollo. A continuación expondré algunas características
-      de la idea clásica y algunos puntos comunes entre las diferentes escuelas,
-      a modo introductorio. En artículos futuros intentaremos profundizar en las
+      ya es una ganancia. Dentro de sus ventajas más importantes está la
+      cuestión metodológica: <mark>TDD</mark> nos propone abordar la complejidad
+      en pasos pequeños (un Test) y esto es mucho más eficiente y satisfactorio
+      como metodología de desarrollo. También podemos destacar entre sus
+      beneficios, que al abordar las reglas de negocio de a una, las porciones
+      de código en las que estamos trabajado reducen su volumen. De esta manera
+      estamos mucho más cerca de un error cuando sucede, esto nos permite saber
+      casi con exactitud <i>dónde</i> falló el test y por qué. De esta manera
+      casi cae en desuso la técnica debugging. Es por este motivo que podemos
+      abordar la complejidad de manera granular, entonces nos enfrentamos con
+      los problemas de hacer funcionar nuestro código y de que tenga buena
+      calidad por separado.
+    </p>
+    <blockquote cite="#">
+      <p class="uk-margin-small-bottom">
+        "Make it work, make it right, make it fast"
+      </p>
+      <footer>
+        Kent Beck
+        <cite
+          ><a
+            target="_blank"
+            href="http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast"
+            >cite</a
+          ></cite
+        >
+      </footer>
+    </blockquote>
+    <p class="uk-text-justify">
+      A continuación expondré algunas características de la idea clásica y
+      algunos puntos comunes entre las diferentes escuelas, a modo
+      introductorio. En artículos futuros intentaremos profundizar en las
       diferencias que existen, sus ventajas y desventajas y las formas que
       existen para aplicarlas.
     </p>
     <h2 class="uk-heading-line">Primero, ¿qué es un Test?</h2>
+    <p class="uk-text-justify">
+      Llamamos <mark>Test</mark>, en este contexto, a una porción de código con
+      la que probamos una parte de nuestra aplicación. Sobre la morfología y
+      técnicas de construcción de un <mark>Test</mark> hablaremos más adelante,
+      pero es importante por ahora entender que es código ejecutable de carácter
+      lógico (Fail or Success). Dento de un test vamos a poner a rodar nuestro
+      código productivo, simulando escenarios y asertando sobre resultados
+      esperados.
+    </p>
+    <p class="uk-text-justify">
+      Si te interesa investigar herramientas para la construcción de
+      <mark>Test</mark> ahora, te dejo una lista de algunas de las más populares:
+      <ul class="uk-list uk-list-circle">
+        <li>Java - JUnit</li>
+        <li>JavaScript - Jest</li>
+        <li>Python - Pytest</li>
+        <li>C# .Net - NUnit</li>
+    </ul>
 
+    </p>
     <h2 class="uk-heading-line">Etapas: Red, Green y Refactor</h2>
     <p class="uk-text-justify">
       TDD consiste en tres etapas, que son el motor de esta técnica y se
